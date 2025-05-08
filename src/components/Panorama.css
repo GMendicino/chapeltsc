@@ -1,0 +1,255 @@
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    z-index: 5;
+}
+
+.panorama-page {
+    overflow: hidden; /* Prevent scrolling */
+    position: fixed; /* Fixes it in place */
+    top: 5;
+    left: 0;
+    width: 100%; 
+    height: 100vh; /* 100% of the viewport height */
+    background-color: #FFF;
+}
+
+/* Panorama Container */
+.panorama-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top:60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Custom width */
+    background: rgba(255, 255, 255, 0.903);
+    padding-top: 15px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #C9C9C9;
+    z-index: 2;
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+}
+
+/* Popup Content */
+.popup-content {
+    position : relative;
+    text-align: center;
+    padding-top: 5px; /* Space for the close button */
+}
+
+.popup h2 {
+    font-size: 24px;
+    color: #000;
+    margin-top : 40px;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Popup Buttons Container */
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* audio button */
+.popup button {
+    padding: 6px 14px;
+    font-size: 14px; /* Match Learn More button size */
+    background-color: #8A2F2F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.popup button:hover {
+    background-color: #7a7373;
+}
+/* Close Button */
+.popup .close-button {
+    position: absolute;
+    margin : 0;
+    padding : 5px 5px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    border-radius : 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #8A2F2F; /* Close button color */
+    color: white
+}
+
+
+/* Learn More Button (Grey) */
+.info-button {
+    padding: 6px 14px;
+    font-size: 14px; /* Match Close button size */
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.info-button:hover {
+    background-color: #bbb;
+}
+
+
+.smallPulpitHotspot {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.directionHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("upArrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.stainedGlassHotspot {
+    width: 100px; 
+    height: 100px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.organHotspot {
+    width: 100px; 
+    height: 100px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.roodScreenHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.warMemorialHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.smallPulpitHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.anteChapelHotspot {
+    width: 100px; 
+    height: 100px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.graffitiHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.choirStallsHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.largePulpitHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.elphinstoneGraveHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.chapelCeilingHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.maryHotspot {
+    width: 80px; 
+    height: 80px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
