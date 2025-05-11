@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from './components/Layout';
 import Info from './components/Info';
 import About from './components/About';
-import Organ from './components/Organ';
 import SmallPulpit from './components/SmallPulpit' ;
 import RoodScreen from './components/RoodScreen' ;
 import Panorama from './components/Panorama';
@@ -15,11 +14,11 @@ import Mary from './components/goodbyeMary';
 import StainedGlass from './components/stainedGlass';
 import ChoirStallsPanorama from './components/choirStallsPanorama'
 import SanctuaryPanorama from './components/sanctuaryPanorama';
-import Login from "./components/Login";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Dashboard from "./components/Dashboard";
-import Feedback from "./components/Feedback"; // Add this import
 import Help from "./components/help";
+import WarMemWindow from './components/WarMemWindow';
+import WestWindow from './components/WestWindow';
+import ChapelMouse from './components/chapelMouse';
+import DeGurbs from './components/deGurbs';
 
 
 function App() {
@@ -38,15 +37,33 @@ function App() {
             </Layout>
            }
           />
-          <Route path="/panorama" element={
+          <Route path="/chapelMouse" element={
             <Layout>
-              <Panorama />
+              <ChapelMouse />
             </Layout>
            }
           />
-          <Route path="/organ" element={
+          <Route path="/deGurbs" element={
             <Layout>
-              <Organ />
+              <DeGurbs />
+            </Layout>
+           }
+          />
+          <Route path="/warMemWindow" element={
+            <Layout>
+              <WarMemWindow />
+            </Layout>
+           }
+          />
+          <Route path="/westWindow" element={
+            <Layout>
+              <WestWindow />
+            </Layout>
+           }
+          />
+          <Route path="/panorama" element={
+            <Layout>
+              <Panorama />
             </Layout>
            }
           />
@@ -110,30 +127,12 @@ function App() {
             </Layout>
            }
           />
-          {/* Add new feedback route */}
-          <Route path="/feedback" element={
-            <Layout>
-              <Feedback />
-            </Layout>
-           }
-          />
           <Route path="/help" element={
             <Layout>
               <Help/>
             </Layout>
           }
           />
-          {/* login page - no layout, so it's a clean login screen */}
-          <Route path="/login" element={<Login />} />
-
-          {/* protected route - only logged-in users can see this */}
-          <Route path="/dashboard" element={
-              <ProtectedRoute>
-                  <Layout>
-                      <Dashboard />
-                  </Layout>
-              </ProtectedRoute>
-          }/>
         </Routes>
       </Router>
   );

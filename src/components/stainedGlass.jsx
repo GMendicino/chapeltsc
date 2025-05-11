@@ -4,24 +4,36 @@ import { useNavigate } from "react-router-dom";
 import "../info.css";
 
 
-function StainedGlass() {
+  
+
+
+
+function StainedGlass(){
   const navigate = useNavigate() ;
   return (
-    <div className="stainedGlass">
-      <h1>The Universities' History Told by Stained Glass Art</h1>
-      <p>Panel one:
+    <div className="WestWindow">
+      <div className="two-column-section">
+        <div className="column">
+          <h2>The Pirie Memorial Window</h2>
+          <img src="/images/pirieMemorial.jpg" alt="War Memorial Window" width="300" height="400" className="image" />
+          <p>
+          3A Panel one: 
+This Panel depicts Bishop Elphinstone’s journey to Rome to meet with Pope Alexander VI and receive permission to establish a University in Aberdeen, which was granted in 1495. 
 
-This Panel depicts the Bishop Elphinstone journey to Rome to meet with Pope Alexander the VI and receive permissions to establish the King’s College which was granted in 1495.
+          </p>
+        </div>
 
-
-Panel two:
-
-The mid-section panel shows Elphinstones return and the beginning of construction of the King’s College. The original construction on the structures did not begin until 1500. This was due to a need to sink large cut trees to secure the foundation and keep it from sinking. The chapel was complete sometime before 1506, taking approximately six years to build.
-
-
-Panel three:
-
-The last panel is the dedication of the King’s College to James IV of Scotland and to the Trinity and the Virgin Mary. In the depiction you can see the Bishop Elphinstone greeting King James IV and honouring him with the naming of the College for his instrumental help in its establishment.</p>
+        <div className="column">
+          <p>
+          3A Panel two: 
+The mid-section panel shows Elphinstone’s return and the beginning of construction of the College, and particularly the building of the Crown tower. Building works did not begin until 1500, due to a need to sink large cut trees to secure the foundation and ensure structural stability. The chapel was completed sometime before 1506, taking approximately six years to build. 
+          </p>
+          <p>
+          3A Panel three: 
+          The last panel is the dedication of the College to James IV of Scotland, and to the Trinity and the Virgin Mary. In the depiction, you can see Bishop Elphinstone greeting King James IV and honouring him with the naming of the College. It also depicts the burial of Elphinstone in the King’s College Chapel.
+          </p>
+        </div>
+      </div>  
       <button className="backButton" onClick={() => navigate(-1)}>
         Back to Tour
       </button>
@@ -30,4 +42,8 @@ The last panel is the dedication of the King’s College to James IV of Scotland
   );
 }
 
+
+
 export default StainedGlass;
+
+

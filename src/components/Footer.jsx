@@ -45,7 +45,6 @@ function Footer() {
 
             <div style={normalSpacingStyle}>
               <p>Tel: <span style={highlightStyle}>+44 (0)1224 272000</span></p>
-              <Link to="/login" style={highlightStyle} >Staff Login</Link>
             </div>
           </div>
 

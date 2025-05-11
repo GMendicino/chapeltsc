@@ -47,7 +47,6 @@ useEffect(() => {
                 <li><Link to="/panorama" onClick={closeMenu}>Ante-Chapel</Link></li>
                 <li><Link to="/choirStallsPanorama" onClick={closeMenu}>Choir Stalls</Link></li>
                 <li><Link to="/sanctuaryPanorama" onClick={closeMenu}>Sanctuary</Link></li>
-                <li><Link to="/Feedback" onClick = {closeMenu}>Feedback</Link></li>
                 <li><Link to="/help" onClick = {closeMenu}>Help</Link></li>
 
             </ul>

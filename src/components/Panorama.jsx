@@ -12,6 +12,9 @@ function Panorama() {
   const [warMemorialPopupVisible, setWarMemorialPopupVisible] = useState(false);
   const [smallPulpitPopupVisible, setSmallPulpitPopupVisible] = useState(false);
   const [anteChapelPopupVisible, setAnteChapelPopupVisible] = useState(false);
+  const [warMemWindowPopupVisible, setWarMemWindowPopupVisible] = useState(false);
+  const [westWindowPopupVisible, setWestWindowPopupVisible] = useState(false);
+  const [mersonPopupVisible, setMersonPopupVisible] = useState(false);
   const [directionPopupVisible, setDirectionPopupVisible] = useState(false);
 
   //Add text to speech
@@ -46,15 +49,14 @@ function Panorama() {
           );
           ReactPannellum.addHotSpot(
             {
-              pitch: 0,
-              yaw: 200,
+              pitch: 40,
+              yaw: 240,
               type: "custom",
-              cssClass: "roodScreenHotspot",
+              cssClass: "organHotspot",
               createTooltipFunc: (hotspotDiv) => {
                 hotspotDiv.style.cursor = "pointer";
                 hotspotDiv.onclick = () => {
-                    
-                  setRoodScreenPopupVisible(true);
+                  setMersonPopupVisible(true);
                 };
               },
             },
@@ -70,6 +72,36 @@ function Panorama() {
                 hotspotDiv.onclick = () => {
                     
                   setSmallPulpitPopupVisible(true);
+                };
+              },
+            },
+          );
+          ReactPannellum.addHotSpot(
+            {
+              pitch: 0,
+              yaw: 200,
+              type: "custom",
+              cssClass: "roodScreenHotspot",
+              createTooltipFunc: (hotspotDiv) => {
+                hotspotDiv.style.cursor = "pointer";
+                hotspotDiv.onclick = () => {
+                    
+                  setRoodScreenPopupVisible(true);
+                };
+              },
+            },
+          );
+          ReactPannellum.addHotSpot(
+            {
+              pitch: 25,
+              yaw: 70,
+              type: "custom",
+              cssClass: "warMemWindowHotspot",
+              createTooltipFunc: (hotspotDiv) => {
+                hotspotDiv.style.cursor = "pointer";
+                hotspotDiv.onclick = () => {
+                    
+                  setWarMemWindowPopupVisible(true);
                 };
               },
             },
@@ -100,6 +132,21 @@ function Panorama() {
                 hotspotDiv.onclick = () => {
                    
                   setAnteChapelPopupVisible(true);
+                };
+              },
+            },
+          );
+          ReactPannellum.addHotSpot(
+            {
+              pitch: 30,
+              yaw: 0,
+              type: "custom",
+              cssClass: "westWindowHotspot",
+              createTooltipFunc: (hotspotDiv) => {
+                hotspotDiv.style.cursor = "pointer";
+                hotspotDiv.onclick = () => {
+                   
+                  setWestWindowPopupVisible(true);
                 };
               },
             },
@@ -213,6 +260,27 @@ return (
         </div>
       )}  
 
+    {mersonPopupVisible && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Merson Memorial Window</h2>
+            <p id = "mersonParagraph">
+            This small window was donated by Dorthy Merson-Bonner in remembrance of her brother William Merson and his friends who were lost during the First World War. It has two small panels: on the left, the University coat of arms topped by the badge of the Gordon Highlanders regiment. On the right is Saint Andrew, the patron saint of Scotland, holding a fish. He is surrounded by the sea with a banner of Scotland over his head and a crucifix behind him.
+            </p>
+            <div className="popup-buttons">
+              <button onClick={() => speakText(document.getElementById('mersonParagraph').textContent)}>Listen To Audio</button>
+              <button onClick={stopSpeech}>Stop Audio</button>
+              </div>
+                <div className = "popup-close-button">
+                  <button className = "close-button" onClick={() => {
+                setMersonPopupVisible(false);
+                stopSpeech();
+                }}>X</button>
+            </div>
+          </div>
+        </div>
+      )}  
+
     {smallPulpitPopupVisible && (
         <div className="popup">
           <div className="popup-content">
@@ -233,13 +301,54 @@ return (
         </div>
       )}
 
+    {westWindowPopupVisible && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>The West Window</h2>
+            <p id = "westWindowParagraph">
+            The West Window, created by the studio of Clayton and Bell of London, dates to 1876. A small fragment in the top portion, however, dates back to its early days and are the oldest in the chapel. It is a round-headed window seen in the central mullion which runs up to the top, cutting the arch into two sections. The themes of this window are taken from the Hebrew Bible. 
+            </p>
+            <div className="popup-buttons">
+              <Link to="/westWindow" className="info-button">Learn more</Link>
+              <button onClick={() => speakText(document.getElementById('westWindowParagraph').textContent)}>Listen To Audio</button>
+              <button onClick={stopSpeech}>Stop Audio</button>
+              </div>
+              <div className = "popup-close-button">
+              <button className = "close-button" onClick={() => {
+                setWestWindowPopupVisible(false);
+                stopSpeech();
+                }}>X</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+    {warMemWindowPopupVisible && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>The War Memorial Window</h2>
+            <p id = "warMemParagraph">Designed by Douglas Strachan of Aberdeen, the War Memorial Window commemorates fallen Soldiers connected to the University. The window considers two main themes: our struggles which we must face and the goodness we find in knowledge and reason. This aligns with the University’s founding mission, to be “open to all and dedicated to the pursuit of truth in the service of others”. </p>
+            <div className="popup-buttons">
+              <Link to="/warMemWindow" className="info-button">Learn more</Link>
+              <button onClick={() => speakText(document.getElementById('warMemParagraph').textContent)}>Listen To Audio</button>
+              <button onClick={stopSpeech}>Stop Audio</button>
+              </div>
+              <div className = "popup-close-button">
+              <button className = "close-button" onClick={() => {
+                setWarMemWindowPopupVisible(false);
+                stopSpeech();
+                }}>X</button>
+            </div>
+          </div>
+        </div>
+      )}
+
     {organPopupVisible && (
         <div className="popup">
           <div className="popup-content">
             <h2>The Chapel Organ</h2>
-            <p id = "organParagraph">King's College Chapel houses a distinguished organ crafted by French master organ builder Bernard Aubertin. Installed in April 2004, this instrument is notable for being the first Aubertin organ in the United Kingdom. .</p>
+            <img src="/images/organImage.jpg" alt="War Memorial Window" width="400" height="200" className="image" />
             <div className="popup-buttons">
-              <Link to="/organ" className="info-button">Learn more</Link>
               <button onClick={() => speakText(document.getElementById('organParagraph').textContent)}>Listen To Audio</button>
               <button onClick={stopSpeech}>Stop Audio</button>
               </div>

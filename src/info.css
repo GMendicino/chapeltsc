@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #007bff; /* Blue color for visibility */
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -21,6 +21,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .services-container {
