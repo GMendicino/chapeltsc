@@ -19,6 +19,7 @@ import WarMemWindow from './components/WarMemWindow';
 import WestWindow from './components/WestWindow';
 import ChapelMouse from './components/chapelMouse';
 import DeGurbs from './components/deGurbs';
+import OrganImages from './components/organImages';
 
 
 function App() {
@@ -34,6 +35,12 @@ function App() {
           <Route path="/about" element={
             <Layout>
               <About />
+            </Layout>
+           }
+          />
+          <Route path="/organImages" element={
+            <Layout>
+              <OrganImages />
             </Layout>
            }
           />

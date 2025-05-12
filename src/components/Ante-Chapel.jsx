@@ -22,7 +22,7 @@ function AnteChapel() {
 
         <div className="column">
           
-          <img src="/images/anteChapelPhoto.jpg" alt="War Memorial Window" width="600" height="300" className="image" />
+          <img src="/images/anteChapelPhoto.jpg" alt="War Memorial Window" width="350" height="200" className="image" />
         </div>
       </div>
 

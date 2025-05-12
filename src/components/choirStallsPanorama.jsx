@@ -80,7 +80,7 @@ function Panorama() {
           ReactPannellum.addHotSpot(
             {
               pitch: -30,
-              yaw: 270,
+              yaw: 130,
               type: "custom",
               cssClass: "chapelMouseHotspot",
               createTooltipFunc: (hotspotDiv) => {
@@ -115,7 +115,7 @@ function Panorama() {
                 yaw: 310,    
                 scale: 10.0,  
                 type: "custom",
-                cssClass: "stainedGlassHotspot",
+                cssClass: "windowsHotspot",
                 createTooltipFunc: (hotspotDiv) => {
                   hotspotDiv.style.cursor = "pointer";
 
@@ -132,7 +132,7 @@ function Panorama() {
                 yaw: 240,    
                 scale: 10.0,  
                 type: "custom",
-                cssClass: "stainedGlassHotspot",
+                cssClass: "windowsHotspot",
                 createTooltipFunc: (hotspotDiv) => {
                   hotspotDiv.style.cursor = "pointer";
 
@@ -219,9 +219,10 @@ return (
         <div className="popup">
             <div className="popup-content">
                 <h2>Ancient Graffiti Within the Chapel</h2>
-                <p id = "graffitiParagraph">The choir seats bear graffiti left by students since the early 1600s, reflecting their studies and focus on penmanship. Scribal work was a key discipline, and even their carvings show careful craftsmanship, with faint tracing lines used as guides to ensure precision.</p>
+                <p id = "graffitiParagraph">
+                  If you explore the choir seats you will notice that students have certainly left their mark. Over the centuries, starting from the early 1600s, students etched their names into the choir stalls. Please don’t just see this as testimony of naughtiness – there is plenty of skill to admire! Scribal work played a large role in their studies, and penmanship was greatly important. This interestingly comes into focus even in their graffiti. On many of the names etched into the seats, you may notice faint tracing lines, acting as guides to ensure that their mark was neat, and carved for eternity.   
+                </p>
                 <div className="popup-buttons">
-                  <Link to="/graffiti" className="info-button">Learn more</Link>
                   <button onClick={() => speakText(document.getElementById('graffitiParagraph').textContent)}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                 </div>

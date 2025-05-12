@@ -36,7 +36,7 @@ function Panorama() {
           ReactPannellum.addHotSpot(
             {
               pitch: 40,
-              yaw: 180,
+              yaw: 185,
               type: "custom",
               cssClass: "organHotspot",
               createTooltipFunc: (hotspotDiv) => {
@@ -285,9 +285,8 @@ return (
         <div className="popup">
           <div className="popup-content">
             <h2>The Small Pulpit</h2>
-            <p id = "smallPulpitParagraph">Now seeming oddly placed along the western wall, this small wooden structure was once one of two pulpits atop the Rood Screen. From these, students would read the New Testament Gospels, sharing the word of God from an elevated position during services. Both pulpits were removed to make space when the organ was introduced to the chapel.</p>
+            <p id = "smallPulpitParagraph">This small wooden structure today seems oddly out of place along the western wall. Originally, it served as one of two pulpits installed on the upper part of the rood screen. From these pulpits, students would read from the Bible and impart the words of God from a high place during services. These were removed when the organ was introduced to the chapel to accommodate the instrument.</p>
             <div className="popup-buttons">
-              <Link to="/smallPulpit" className="info-button">Learn more</Link>
               <button onClick={() => speakText(document.getElementById('smallPulpitParagraph').textContent)}>Listen To Audio</button>
               <button onClick={stopSpeech}>Stop Audio</button>
               </div>
@@ -347,8 +346,11 @@ return (
         <div className="popup">
           <div className="popup-content">
             <h2>The Chapel Organ</h2>
-            <img src="/images/organImage.jpg" alt="War Memorial Window" width="400" height="200" className="image" />
+            <p id="organParagraph">
+              The original organ was built by the Norman Brothers and Beard of Norwich during the 1891- although this may have replaced an earlier organ that was placed along the Western wall. The 1891 organ was short lived as it was not completed until 1928, and by 1952, it was deemed unfit for use and would spend the next fifty years in almost constant need of repairs and revoicing until it was replaced in 2004. The current organ was designed by the French organ builder Bernard Aubertin as a mechanical, three-manual instrument. It only uses electricity for the blowing mechanism and light console. Its tonal design is a medieval Blockwerk made to complement the Chapels acoustics and is similar in sound to what the Founder Elphinstone would have been accustomed to hearing.  
+            </p>
             <div className="popup-buttons">
+              <Link to="/organImages" className="info-button">Uncover Pictures of the Hidden Organ</Link>
               <button onClick={() => speakText(document.getElementById('organParagraph').textContent)}>Listen To Audio</button>
               <button onClick={stopSpeech}>Stop Audio</button>
               </div>
