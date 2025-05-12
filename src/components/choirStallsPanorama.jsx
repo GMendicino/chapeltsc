@@ -3,6 +3,8 @@ import ReactPannellum from "react-pannellum";
 import "./Panorama.css"; 
 import { Link } from "react-router-dom";
   
+const popupRef = React.createRef();
+
 function Panorama() {
 
   const [graffitiPopupVisible, setGraffitiPopupVisible] = useState(false);
@@ -26,6 +28,27 @@ function Panorama() {
   const stopSpeech = () => {
     window.speechSynthesis.cancel();
   };
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (popupRef.current && !popupRef.current.contains(event.target)) {
+          setGraffitiPopupVisible(false);
+          setChoirStallsPopupVisible(false);
+          setStainedGlassPopupVisible(false);
+          setAnteDirectionPopupVisible(false);
+          setDeGurbsPopupVisible(false);
+          setChapelMousePopupVisible(false);
+          setSanctuaryDirectionPopupVisible(false);
+          setChairPopupVisible(false);
+          stopSpeech();
+        }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
 
   useEffect(() => {
     const addHotspot = () => {
@@ -195,7 +218,7 @@ return (
 
     {stainedGlassPopupVisible && (
        <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content" ref = {popupRef}>
               <h2>The Pirie Memorial Window</h2>
               <p id = "stainedGlassParagraph">
               Like other windows seen throughout, this one was created by Douglas Strachan – Britain’s most important stained-glass artist of the early 20th century – in 1912. It is inscribed with ‘To the glory of God and in memory of George Pirie, M.A. Aberdeen and Cambridge, L.L.D, St. Andrews, Professor of Mathematics in the University of Aberdeen, 1877-1904’. The window was commissioned by Pirie’s pupils and friends.
@@ -217,7 +240,7 @@ return (
 
     {graffitiPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Ancient Graffiti Within the Chapel</h2>
                 <p id = "graffitiParagraph">
                   If you explore the choir seats you will notice that students have certainly left their mark. Over the centuries, starting from the early 1600s, students etched their names into the choir stalls. Please don’t just see this as testimony of naughtiness – there is plenty of skill to admire! Scribal work played a large role in their studies, and penmanship was greatly important. This interestingly comes into focus even in their graffiti. On many of the names etched into the seats, you may notice faint tracing lines, acting as guides to ensure that their mark was neat, and carved for eternity.   
@@ -238,7 +261,7 @@ return (
 
     {chapelMousePopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Chapel Mouse</h2>
                 <p id = "mouseParagraph">
                 ‘As poor as a Church mouse’ is a common phrase that may have originated in England as early as the 1600s. In a Church there was never any food kept, so a mouse would not be able to find anything to eat. This would inevitably make the mouse poor.  
@@ -260,7 +283,7 @@ return (
 
     {deGurbsPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>De Gurbs Memorial Window</h2>
                 <p id = "deGurbsParagraph">
                 An early work of Douglas Strachan, dated 1904, this memorial window commemorates Baron de Gurbs (1800-1904), a distinguished graduate of the University. The window’s main scene depicts the dedication of Christ at the temple. Strachan shows an almost anecdotal interest in some of the more marginal characters discussed in the Gospel of Luke, and includes for examples Simeon – a wise man holding Jesus – and Anna, an elderly woman who recognises Jesus as the Messiah.
@@ -284,7 +307,7 @@ return (
 
     {choirStallsPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Choir Stalls Section</h2>
                 <p id = "choirStallParagraph">
                 In 1497, the university’s founder, Bishop Elphinstone, gave the instruction that ‘everyday, by the Grace of God there be singing with note: mattins, evensong, mass of our Lady and High mass’ and more so on Sundays and feast days. The College Chapel was intended as a place of near continuous song and praise. In the early years, the choir was made up of six priests, eight prebendaries, and four choir boys, but these numbers increased over time. 
@@ -306,7 +329,7 @@ return (
 
     {chairPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Misericords ‘Mercy-Seats’</h2>
                 <p id = "chairParagraph">
                 These seats were designed to tip upward and act as a prop for choir members during long periods of standing. A select few of the remaining originals have designs on the under sides. Many designs resemble the drawings found in the founder, Bishop Elphinstone’s handwritten books from the early 1500s and which are held today in the University archives
@@ -327,7 +350,7 @@ return (
       
     {anteDirectionPopupVisible && (
         <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content" ref = {popupRef}>
             <h2>Back to the Ante-Chapel Section</h2>
             <div className="popup-buttons">
               <Link to="/Panorama" className="info-button">Click to Enter Section</Link>
@@ -339,7 +362,7 @@ return (
 
     {sanctuaryDirectionPopupVisible && (
         <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content" ref = {popupRef}>
             <h2>Please Enter The Sanctuary Section at the End of the Chapel</h2>
             <div className="popup-buttons">
               <Link to="/sanctuaryPanorama" className="info-button">Click to Enter Section</Link>

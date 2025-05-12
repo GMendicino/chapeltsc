@@ -3,6 +3,8 @@ import ReactPannellum from "react-pannellum";
 import "./Panorama.css"; 
 import { Link } from "react-router-dom";
   
+const popupRef = React.createRef();
+
 function Panorama() {
 
     const [largePulpitPopupVisible, setLargePulpitPopupVisible] = useState(false);
@@ -30,6 +32,31 @@ function Panorama() {
   const stopSpeech = () => {
     window.speechSynthesis.cancel();
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setLargePulpitPopupVisible(false);
+        setElphinstoneGravePopupVisible(false);
+        setChapelCeilingPopupVisible(false);
+        setExitPopupVisible(false);
+        setDirectionPopupVisible(false);
+        setDeskPopupVisible(false);
+        setCampbellPopupVisible(false);
+        setRSmithPopupVisible(false);
+        setNorthEastPopupVisible(false);
+        setHarrowerPopupVisible(false);
+        setSouthEastPopupVisible(false);
+        setGeddesPopupVisible(false);
+        stopSpeech();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() =>{
     const addHotspot = () => {
@@ -284,7 +311,7 @@ return (
 
 {largePulpitPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Main Chapel Pulpit</h2>
                 <p id = "pulpitParagraph">The pulpit was originally a part of the St. Machar’s Cathedral but was moved here during the 1800s renovation. On it you can see the arms of Bishop William Stewart (d. 1545).</p>
                 <div className="popup-buttons">
@@ -303,7 +330,7 @@ return (
 
       {elphinstoneGravePopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Elphinstone's Grave</h2>
                 <p id = "graveParagraph">After his death, Bishop Elphinstone was buried in King’s College Chapel. What remains today is the original base and cover slab of the tomb chest. It is made of black marble which was brought from Tournai in Belgium. This same marble from Tournai can be seen in adjoining grave markers.  The statue of Bishop Elphinstone and supporting figures were destroyed after the Reformation. A new monument for Elphinstone, created in 1926, can be found on the lawn outside of the Chapel.​</p>
                 <div className="popup-buttons">
@@ -322,7 +349,7 @@ return (
 
         {harrowerPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Harrower Memorial Window</h2>
                 <p id = "harrowerParagraph"> 
                   This is the Easternmost window of the Chapel. It was designed by Douglas Strachan in 1934 with the inscription reading ‘To the Memory of John Harrower for forty-five years Professor of Greek Language and Literature, defender of humane studies. His wife Rachel Blanche gifted this window by her will.’
@@ -344,7 +371,7 @@ return (
 
         {campbellPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Campbell Memorial Window</h2>
                 <p id = "campbellParagraph"> 
                   This window, a work by Clayton and Bell of London, was installed in 1880. It remembers Peter Colin Campbell, a Professor of Greek at the University from 1854 to 1855 as well as Vice-Chancellor from 1855 to 1876. The window shows two scenes of gift-giving, one from the old testament - King Solomon receiving gifts from the Queen Sheba – and one from the New Testament - the adoration of the magi presenting gifts to the Christ child. At the bottom are the coats of arms for the University as well as Principal Campbell.  
@@ -366,7 +393,7 @@ return (
         
         {northEastPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The North-East Window</h2>
                 <p id = "northEastParagraph">
                   Installed in 1938, this is a late work by Douglas Strachan, to commemorate Dr. Duncan Mearns and Sir George Adam Smith. Dr. Mearns was the Professor of Divinity from 1816-1852 and Sir Smith was the Principal and Vice-Chancellor from 1910-1935. The window was a replacement for an earlier one which was solely dedicated to Dr. Mearns.
@@ -388,7 +415,7 @@ return (
 
         {southEastPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The South-East Window</h2>
                 <p id = "southEastParagraph">
                  This is another memorial window, dedicated to numerous individuals connected to the university: Professor Hugh Macpherson, the professor of Hebrew from 1793 to 1797, Professor of Greek and Sub-Principle of the University from 1797 to 1854; Hector Munro Macdonald, Professor of Mathematics from 1904-1935; and James Edward Crombie, Assessor on the University Court from 1900 to 1908 and again 1913 to 1932.
@@ -411,14 +438,14 @@ In this design, Strachan used the ‘Angel of the Flaming Sword’ to symbolize 
 
         {geddesPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>William Geddes Memorial Window</h2>
                 <p id = "geddesParagraph">
                  This window was created in 1903 by Strachan as a dedication ‘in loving duty to the memory of William Duguid Geddes, Knight, L.L.D of Aberdeen and Edinburgh, Litt. D of Dublin, Professor of Greek from 1855-1885 as well as Principal and Vice-Chancellor from 1885 to 1900 by his wife, sisters, brother, and daughter.’
 It is a scene portraying the three wise men giving gifts to the Christ child. This was meant to symbolize the gifts which Sir William Geddes left to those around him: gifts of learning and wisdom of both earthly and heavenly matters. Four angels at the top further this theme; they represent divine wisdom, kingship, passion, and fortune. Perhaps in an attempt to link Geddes’ Classical interests with the Christian setting of the Chapel, Strachan also included depictions of four Sibyls – ancient prophetesses that were said to have predicted the birth of Christ.   
 
                 ​</p>
-                <div className="popup-buttons">
+                <div className="popup-buttons" ref = {popupRef}>
                   <button onClick={() => speakText(document.getElementById('geddesParagraph').textContent)}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                   </div>
@@ -434,7 +461,7 @@ It is a scene portraying the three wise men giving gifts to the Christ child. Th
 
         {rsmithPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Robertson Smith Memorial Window</h2>
                 <p id = "rsmithParagraph">
                   This window was cooperatively designed by the Aberdonian architect Alexander Marshall Mackenzie of Aberdeen (who also designed Elphinstone Hall, next to the Chapel), together with the Pre-Raphaelite artist Sir Edward Burne Jones, who designed the figures. It is dedicated to William Roberston Smith L.L.D of Aberdeen, Litt.D of Dublin, Doctor of Theology of Strasburg, Professor of Cambridge, and an alumnus of the University (1846-1894). 	
@@ -456,7 +483,7 @@ The window shows four prophets of the Hebrew Bible: Isaiah, Jeremiah, Ezekial, a
       
       {chapelCeilingPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Chapel Ceiling</h2>
                 <p id = "ceilingParagraph">The ceiling is a unique blend of Scottish and European aesthetics which is commonly referred to as wagon ceilings these design patterns have been popular since 1200s but saw a revival in appreciation during the late 1400s and early 1500s right around the time which Kings College chapel was constructed. The ceiling today still likely maintains a very similar style to when it was originally constructed based on evidence of other ceilings around Scotland.</p>
                 <div className="popup-buttons">
@@ -475,7 +502,7 @@ The window shows four prophets of the Hebrew Bible: Isaiah, Jeremiah, Ezekial, a
 
       {deskPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>The Desk of Bishop Patrick Forbes</h2>
                 <p id = "deskParagraph">Restored in 1889 by McPherson, this is was the desk of Bishop Patrick Forbes and originally supported the Lenten veil (a cloth usually depicting the Passion of Christ and displayed during Holy Week, leading up to Easter Sunday). Forbes’ coat of arms and the date 1627 still remain; however, the original inscription was destroyed. This defacing likely happened during the Scottish Reformation by the Covenanters who were opposed to any image or Catholic doctrinal themes within newly designated Protestant churches and chapels. </p>
                 <div className="popup-buttons">
@@ -494,7 +521,7 @@ The window shows four prophets of the Hebrew Bible: Isaiah, Jeremiah, Ezekial, a
 
       {exitPopupVisible && (
         <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content" ref = {popupRef}>
                 <h2>Please Exit The Chapel Here</h2>
                 <div className="popup-buttons">
                   <Link to="/mary" className="info-button">Please Click Here</Link>
@@ -510,7 +537,7 @@ The window shows four prophets of the Hebrew Bible: Isaiah, Jeremiah, Ezekial, a
 
       {directionPopupVisible && (
         <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content" ref = {popupRef}>
             <h2>Back to the Choir Stalls Section</h2>
             <div className="popup-buttons">
               <Link to="/choirStallsPanorama" className="info-button">Click to Enter Section</Link>
