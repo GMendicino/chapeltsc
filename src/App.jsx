@@ -20,7 +20,8 @@ import WestWindow from './components/WestWindow';
 import ChapelMouse from './components/chapelMouse';
 import DeGurbs from './components/deGurbs';
 import OrganImages from './components/organImages';
-
+import NorthEast from './components/northEast';
+import Harrower from './components/harrower';
 
 function App() {
   return (
@@ -35,6 +36,18 @@ function App() {
           <Route path="/about" element={
             <Layout>
               <About />
+            </Layout>
+           }
+          />
+          <Route path="/harrower" element={
+            <Layout>
+              <Harrower />
+            </Layout>
+           }
+          />
+          <Route path="/northEast" element={
+            <Layout>
+              <NorthEast />
             </Layout>
            }
           />

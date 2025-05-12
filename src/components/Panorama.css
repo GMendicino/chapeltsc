@@ -184,6 +184,16 @@
     cursor: pointer;
 }
 
+.deskHotspot {
+    width: 60px; 
+    height: 60px;
+    background-image: url("chapelInfo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
 .exitHotspot {
     width: 60px; 
     height: 60px;
