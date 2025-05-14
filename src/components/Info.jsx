@@ -35,7 +35,7 @@ function Info() {
   
   const services = [
     {
-      title: "Alter",
+      title: "Altar",
       content: "The altar is a sacred table used for worship or sacrifice, typically serving as the focal point during religious rites such as the Eucharist.",
       icon: "/images/alter.jpg" 
     },

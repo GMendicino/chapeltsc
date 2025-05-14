@@ -207,7 +207,7 @@
 .chapelMouseHotspot {
     width: 80px; 
     height: 80px;
-    background-image: url("chapelMouseImage.png");
+    background-image: url("mousePNG.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
