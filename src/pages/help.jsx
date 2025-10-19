@@ -1,7 +1,7 @@
 import React from 'react';
 import './help.css';
 import tutorial1 from './tutorial1.png'; // Proper import of image
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 
 const HelpPage = () => {

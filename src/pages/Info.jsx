@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from '../Carousel';
+import Carousel from '../components/Carousel';
 import "../info.css";
-import Footer from './Footer';
+import Footer from '../components/Footer';
 import { Link } from "react-router-dom";
 
 function Info() {

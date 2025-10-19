@@ -1,27 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from './components/Layout';
-import Info from './components/Info';
-import About from './components/About';
-import SmallPulpit from './components/SmallPulpit' ;
-import RoodScreen from './components/RoodScreen' ;
-import Panorama from './components/Panorama';
-import AnteChapel from './components/Ante-Chapel';
-import Graffiti from './components/graffiti';
-import ChoirStalls from './components/ChoirStallsSection';
-import ElphinstoneGrave from './components/elphinstoneGrave';
-import Mary from './components/goodbyeMary';
-import StainedGlass from './components/stainedGlass';
-import ChoirStallsPanorama from './components/choirStallsPanorama'
-import SanctuaryPanorama from './components/sanctuaryPanorama';
-import Help from "./components/help";
-import WarMemWindow from './components/WarMemWindow';
-import WestWindow from './components/WestWindow';
-import ChapelMouse from './components/chapelMouse';
-import DeGurbs from './components/deGurbs';
-import OrganImages from './components/organImages';
-import NorthEast from './components/northEast';
-import Harrower from './components/harrower';
+import Layout from './pages/Layout';
+import Info from './pages/Info';
+import About from './pages/About';
+import SmallPulpit from './pages/SmallPulpit' ;
+import RoodScreen from './pages/RoodScreen' ;
+import Panorama from './pages/Panorama';
+import AnteChapel from './pages/Ante-Chapel';
+import Graffiti from './pages/graffiti';
+import ChoirStalls from './pages/ChoirStallsSection';
+import ElphinstoneGrave from './pages/elphinstoneGrave';
+import Mary from './pages/goodbyeMary';
+import StainedGlass from './pages/stainedGlass';
+import ChoirStallsPanorama from './pages/choirStallsPanorama'
+import SanctuaryPanorama from './pages/sanctuaryPanorama';
+import Help from "./pages/help";
+import WarMemWindow from './pages/WarMemWindow';
+import WestWindow from './pages/WestWindow';
+import ChapelMouse from './pages/chapelMouse';
+import DeGurbs from './pages/deGurbs';
+import OrganImages from './pages/organImages';
+import NorthEast from './pages/northEast';
+import Harrower from './pages/harrower';
 
 function App() {
   return (

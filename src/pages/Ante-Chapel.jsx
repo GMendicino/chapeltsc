@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer'; 
+import Footer from '../pages/Footer'; 
 import { useNavigate } from "react-router-dom";
 import "../info.css";
 
