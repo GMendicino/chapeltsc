@@ -1,11 +1,7 @@
 import React, { useState, useEffect, CSSProperties } from 'react';
-import { Link } from "react-router-dom";
-import UoALogo from '../assets/images/UoA.svg'; // Example: Assuming you move this to assets
-import UKFlag from '../assets/images/UK.png';     // Example: Assuming you move this to assets
-import Pointer from '../assets/images/pointer.png'; // Example: Assuming you move this to assets
 
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
@@ -33,7 +29,7 @@ const Footer: React.FC = () => {
   return (
     <div className="Footer">
       <div style={footerStyle}>
-        <img src={UoALogo} alt="University of Aberdeen" style={logoStyle} />
+        <img src={"../assets/images/UoA.svg"} alt="University of Aberdeen" style={logoStyle} />
 
         <div style={contentContainerStyle}>
           <div style={textContainerStyle}>
@@ -49,8 +45,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <img src={UKFlag} alt="UK Flag" style={ukImageStyle} />
-          <img src={Pointer} alt="Pointer" style={PointerStyle} />
+          <img src={"../assets/images/UK.png"} alt="UK Flag" style={ukImageStyle} />
+          <img src={"../assets/images/pointer.png"} alt="Pointer" style={PointerStyle} />
         </div>
       </div>
 
@@ -145,4 +141,3 @@ const backToTopButtonStyle: CSSProperties = {
   zIndex: 2,
 };
 
-export default Footer;
