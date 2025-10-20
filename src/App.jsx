@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from './pages/Layout';
+import Layout from './components/Layout';
 import Info from './pages/Info';
 import About from './pages/About';
-import SmallPulpit from './pages/SmallPulpit' ;
+import SmallPulpit from './pages/details/SmallPulpit' ;
 import RoodScreen from './pages/RoodScreen' ;
 import Panorama from './pages/Panorama';
 import AnteChapel from './pages/Ante-Chapel';
