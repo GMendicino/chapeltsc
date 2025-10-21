@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from './components/Layout';
 import Info from './pages/Info';
-import About from './pages/About';
 import SmallPulpit from './pages/details/SmallPulpit' ;
 import RoodScreen from './pages/RoodScreen' ;
 import Panorama from './pages/Panorama';
@@ -30,12 +29,6 @@ function App() {
           <Route path="/" element={
             <Layout>
               <Info />
-            </Layout>
-           }
-          />
-          <Route path="/about" element={
-            <Layout>
-              <About />
             </Layout>
            }
           />
