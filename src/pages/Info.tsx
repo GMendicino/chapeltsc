@@ -37,7 +37,6 @@ export const Info: React.FC = () => {
     );
   }
   
-  // Array of service objects with the defined type
   const services: Service[] = [
     {
       title: "Altar",

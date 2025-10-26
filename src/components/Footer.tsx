@@ -1,5 +1,5 @@
-import React, { useState, useEffect, CSSProperties } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import '../assets/styles/footer.css'; 
 
 export const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -28,116 +28,33 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="Footer">
-      <div style={footerStyle}>
-        <img src={"../assets/images/UoA.svg"} alt="University of Aberdeen" style={logoStyle} />
+      <div className="footer-container">
+        <img src="/images/UoA.svg" alt="University of Aberdeen" className="footer-logo" />
 
-        <div style={contentContainerStyle}>
-          <div style={textContainerStyle}>
-            <div style={tightSpacingStyle}>
+        <div className="footer-content-container">
+          <div className="footer-text-container">
+            <div className="footer-tight-spacing">
               <p>University of Aberdeen</p>
               <p>King's College,</p>
               <p>Aberdeen,</p>
-              <p style={postcodeStyle}>AB24 3FX</p>
+              <p className="footer-postcode">AB24 3FX</p>
             </div>
 
-            <div style={normalSpacingStyle}>
-              <p>Tel: <span style={highlightStyle}>+44 (0)1224 272000</span></p>
+            <div className="footer-normal-spacing">
+              <p>Tel: <span className="footer-highlight">+44 (0)1224 272000</span></p>
             </div>
           </div>
 
-          <img src={"../assets/images/UK.png"} alt="UK Flag" style={ukImageStyle} />
-          <img src={"../assets/images/pointer.png"} alt="Pointer" style={PointerStyle} />
+          <img src="/images/UK.png" alt="UK Flag" className="footer-uk-image" />
+          <img src="/images/pointer.png" alt="Pointer" className="footer-pointer-image" />
         </div>
       </div>
 
       {isVisible && (
-        <button onClick={scrollToTop} style={backToTopButtonStyle}>
-          Top Of Page    
+        <button onClick={scrollToTop} className="footer-back-to-top-button">
+          Top Of Page
         </button>
       )}
     </div>
   );
-}
-
-// Define types for styles
-const footerStyle: CSSProperties = {
-  backgroundColor: '#272727',
-  color: 'white',
-  textAlign: 'left',
-  height: '350px',
-  fontSize: '0.9rem',
-  paddingTop: '10px',
-  paddingBottom: '10px',
-  paddingLeft: '20px',
 };
-
-const logoStyle: CSSProperties = {
-  display: 'block',
-  margin: '20px',
-  height: '50px',
-};
-
-const contentContainerStyle: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
-  zIndex: 1,
-};
-
-const textContainerStyle: CSSProperties = {
-  marginLeft: '20px',
-  zIndex: 1,
-};
-
-const tightSpacingStyle: CSSProperties = {
-  lineHeight: '0.2',
-};
-
-const normalSpacingStyle: CSSProperties = {
-  lineHeight: '1.0',
-  marginTop: '10px',
-};
-
-const highlightStyle: CSSProperties = {
-  color: '#FFD414',
-  fontWeight: 600,
-  zIndex: 1,
-};
-
-const postcodeStyle: CSSProperties = {
-  marginBottom: '25px',
-};
-
-const ukImageStyle: CSSProperties = {
-  position: 'absolute',
-  left: '130px',
-  top: '10px',
-  height: '220px',
-  filter: 'grayscale(100%)',
-  zIndex: -0,
-};
-
-const PointerStyle: CSSProperties = {
-  position: 'absolute',
-  left: '260px',
-  top: '40px',
-  height: '25px',
-  width: '20px',
-  filter: 'grayscale(0%)',
-  zIndex: 1,
-};
-
-const backToTopButtonStyle: CSSProperties = {
-  position: 'fixed',
-  bottom: '20px',
-  right: '20px',
-  backgroundColor: '#8A2F2F',
-  color: 'white',
-  border: 'none',
-  padding: '10px 15px',
-  fontSize: '16px',
-  borderRadius: '5px',
-  cursor: 'pointer',
-  zIndex: 2,
-};
-
