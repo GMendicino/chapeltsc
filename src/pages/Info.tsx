@@ -1,4 +1,3 @@
-// src/pages/Info.tsx
 import React, { useState, useEffect, CSSProperties } from 'react';
 import {Carousel} from '../components/Carousel';
 import "../assets/styles/info.css";
