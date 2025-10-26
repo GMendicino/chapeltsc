@@ -1,15 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  
-
-
-
-function WestWindow(){
-  const navigate = useNavigate() ;
+export const WestWindow: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="WestWindow">
       <div className="two-column-section">
@@ -21,7 +16,7 @@ function WestWindow(){
         </div>
 
         <div className="column">
-        <img src="/images/westWindow.jpg" alt="War Memorial Window" width="300" height="400" className="image" />
+        <img src="/images/westWindow.jpg" alt="West Window" width="300" height="400" className="image" />
         </div>
       </div>  
       <button className="backButton" onClick={() => navigate(-1)}>
@@ -31,9 +26,3 @@ function WestWindow(){
     </div>
   );
 }
-
-
-
-export default WestWindow;
-
-

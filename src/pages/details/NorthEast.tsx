@@ -1,15 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  
-
-
-
-function NorthEast(){
-  const navigate = useNavigate() ;
+export const NorthEast: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="NorthEast">
       <div className="two-column-section">
@@ -22,7 +17,7 @@ It is meant to represent the cycle of life as understood in Christianity: Life, 
         </div>
 
         <div className="column">
-        <img src="/images/northEastImage.jpg" alt="War Memorial Window" width="300" height="400" className="image" />
+        <img src="/images/northEastImage.jpg" alt="North-East Window" width="300" height="400" className="image" />
         </div>
       </div>  
       <button className="backButton" onClick={() => navigate(-1)}>
@@ -32,9 +27,3 @@ It is meant to represent the cycle of life as understood in Christianity: Life, 
     </div>
   );
 }
-
-
-
-export default NorthEast;
-
-

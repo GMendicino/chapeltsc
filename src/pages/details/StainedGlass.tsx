@@ -1,25 +1,19 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  
-
-
-
-function StainedGlass(){
-  const navigate = useNavigate() ;
+export const StainedGlass: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="WestWindow">
       <div className="two-column-section">
         <div className="column">
           <h2>The Pirie Memorial Window</h2>
-          <img src="/images/pirieMemorial.jpg" alt="War Memorial Window" width="300" height="400" className="image" />
+          <img src="/images/pirieMemorial.jpg" alt="Pirie Memorial Window" width="300" height="400" className="image" />
           <p>
           Panel one: 
 This Panel depicts Bishop Elphinstone’s journey to Rome to meet with Pope Alexander VI and receive permission to establish a University in Aberdeen, which was granted in 1495. 
-
           </p>
         </div>
 
@@ -41,9 +35,3 @@ The mid-section panel shows Elphinstone’s return and the beginning of construc
     </div>
   );
 }
-
-
-
-export default StainedGlass;
-
-
