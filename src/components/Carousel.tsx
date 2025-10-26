@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./../assets/styles/carousel.css"; // Updated CSS import path
+import "./../assets/styles/carousel.css"; 
 
 interface CarouselProps {
   images: string[];

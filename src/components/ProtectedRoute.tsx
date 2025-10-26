@@ -1,4 +1,3 @@
-// src/components/ProtectedRoute.tsx
 import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -9,43 +8,32 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({children}) => {
-  // state to track authentication status:
-  // null = initial state, checking authentication
-  // false = user is not authenticated
-  // true = user is authenticated
+
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const location = useLocation();
 
   useEffect(() => {
-    // onAuthStateChanged returns an unsubscribe function
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // user is signed in.
         console.log("ProtectedRoute Listener: User is signed IN", user.uid);
-        setIsAuthenticated(true); // update state to authenticated
+        setIsAuthenticated(true); 
       } else {  
-        // user is signed out.
         console.log("ProtectedRoute Listener: User is signed OUT");
-        setIsAuthenticated(false); // update state to not authenticated
+        setIsAuthenticated(false);
       }
     });
 
-    // unsubscribe the listener when the component unmounts to prevent memory leaks
     return () => {
         console.log("ProtectedRoute: Cleaning up auth listener.");
         unsubscribe();
     }
-  }, []); // empty dependency array means this effect runs only once on mount and cleanup runs on unmount
+  }, []);
 
-  // while checking auth status, show a loading indicator
   const Loading: React.FC = () => {
     return <div>Loading...</div>;
   };
 
-  // if the user is not authenticated, redirect them to the login page
-  // we also pass the location they were trying to access in the state,
-  // so the login page could potentially redirect them back after login (optional feature).
-  // ensure the path '/login' matches the case used in your App.jsx routes.
+
   if (!isAuthenticated) {
     console.log("ProtectedRoute: User not authenticated, redirecting to /login");
     return React.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
@@ -53,6 +41,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({children}) => {
 
   console.log("ProtectedRoute: User authenticated, rendering children.");
   return children;
-}; // semicolon added here
+}; 
 
 export default ProtectedRoute;
