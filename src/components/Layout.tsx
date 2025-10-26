@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Navbar from './Navbar';
+import {Navbar} from './Navbar';
 import '.././index.css';
 
 interface LayoutProps {
@@ -16,4 +16,3 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </>
     );
 };
-
