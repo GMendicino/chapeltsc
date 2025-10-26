@@ -1,10 +1,10 @@
 import React from 'react';
-import './help.css';
-import tutorial1 from './tutorial1.png'; // Proper import of image
-import Footer from '../components/Footer';
+import '../assets/styles/help.css';
+import {Footer} from '../components/Footer';
+import tutorial1 from '../assets/images/tutorial1.png'
 
 
-const HelpPage = () => {
+export const HelpPage : React.FC = () => {
   return (
     <div>
 
@@ -53,7 +53,7 @@ const HelpPage = () => {
             </p>
           </section>
         </main>
-        <div classname="footer">
+        <div className="footer">
 
           <Footer />
         </div>
@@ -63,6 +63,5 @@ const HelpPage = () => {
   );
 };
 
-export default HelpPage;
 
 
