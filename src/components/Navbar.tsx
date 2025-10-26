@@ -54,5 +54,3 @@ useEffect(() => {
         </nav>
     );
 };
-
-export default Navbar;
