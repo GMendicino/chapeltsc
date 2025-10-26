@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/help.css';
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 import tutorial1 from '../assets/images/tutorial1.png'
 
 
