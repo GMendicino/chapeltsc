@@ -1,11 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  function Graffiti() {
-  const navigate = useNavigate() ;
+export const Graffiti: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="two-column-section">
@@ -15,7 +14,6 @@ import "../info.css";
           If you explore the choir seats you will notice that students have certainly left their mark. Over the centuries starting from the early 1600s. These are an amazing testament to the disciplines that the students studied. Scribal work played a large role in their studies and penmanship was greatly important. This interestingly comes into focus even in their graffiti. On many of the names etched into the seats you may notice faint tracing lines which acted as guides to ensure that their mark was left in as proper a fashion as they could carve it in.
           </p>
         </div>
-
         <div className="column">
         </div>
       </div>
@@ -26,9 +24,3 @@ import "../info.css";
     </div>
   );
 }
-
-
-
-export default Graffiti;
-
-

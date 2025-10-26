@@ -1,11 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-function Mary() {
-  const navigate = useNavigate() ;
+export const GoodbyeMary: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="two-column-section">
@@ -16,7 +15,7 @@ function Mary() {
           </p>
         </div>
         <div className="column">
-          <img src="/images/maryImage.jpg" alt="MaryImage" width="300" height="400" className="image" />
+          <img src="/images/maryImage.jpg" alt="Mary Image" width="300" height="400" className="image" />
         </div>
       </div>
       <button className="backButton" onClick={() => navigate(-1)}>
@@ -26,9 +25,3 @@ function Mary() {
     </div>
   );
 }
-
-
-
-export default Mary;
-
-

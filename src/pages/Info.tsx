@@ -1,7 +1,7 @@
 import React, { useState, useEffect, CSSProperties } from 'react';
-import {Carousel} from '../components/Carousel';
+import { Carousel } from '../components/Carousel';
 import "../assets/styles/info.css";
-import {Footer} from '../components/Footer';
+import { Footer } from '../components/Footer';
 import { Link } from "react-router-dom";
 
 interface Service {

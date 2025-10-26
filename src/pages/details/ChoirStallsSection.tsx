@@ -1,11 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  function ChoirStallsSection() {
-  const navigate = useNavigate() ;
+export const ChoirStallsSection: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="two-column-section">
@@ -29,9 +28,3 @@ import "../info.css";
     </div>
   );
 }
-
-
-
-export default ChoirStallsSection;
-
-

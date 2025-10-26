@@ -1,14 +1,9 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  
-
-
-
-function DeGurbs(){
+export const DeGurbs: React.FC = () => {
   const navigate = useNavigate() ;
   return (
     <div className="DeGurbs">
@@ -36,9 +31,3 @@ The angels above are in chorus for this grand occasion. They are grouped into se
     </div>
   );
 }
-
-
-
-export default DeGurbs;
-
-

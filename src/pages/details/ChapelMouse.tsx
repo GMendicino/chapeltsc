@@ -1,15 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-  
-
-
-
-function ChapelMouse(){
-  const navigate = useNavigate() ;
+export const ChapelMouse: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="ChapelMouse">
       <div className="two-column-section">
@@ -33,9 +28,3 @@ function ChapelMouse(){
     </div>
   );
 }
-
-
-
-export default ChapelMouse;
-
-

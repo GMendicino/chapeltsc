@@ -1,9 +1,9 @@
 import React from 'react';
-import Footer from '../pages/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-function AnteChapel() {
+export const AnteChapel: React.FC = () => {
   const navigate = useNavigate();
   
   return (
@@ -21,19 +21,15 @@ function AnteChapel() {
         </div>
 
         <div className="column">
-          
-          <img src="/images/anteChapelPhoto.jpg" alt="War Memorial Window" width="350" height="200" className="image" />
+          <img src="/images/anteChapelPhoto.jpg" alt="Ante-Chapel" width="350" height="200" className="image" />
         </div>
       </div>
 
-        <button className="backButton" onClick={() => navigate(-1)}>
-          Back to Tour
-        </button> 
+      <button className="backButton" onClick={() => navigate(-1)}>
+        Back to Tour
+      </button> 
 
-        <Footer />
-      
+      <Footer />
     </div>
   );
 }
-
-export default AnteChapel;

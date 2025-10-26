@@ -1,11 +1,10 @@
 import React from 'react';
-import Footer from '../components/Footer'; 
+import { Footer } from '../../components/Footer'; 
 import { useNavigate } from "react-router-dom";
-import "../info.css";
+import "../../assets/styles/info.css";
 
-
-function ElphinstoneGrave() {
-  const navigate = useNavigate() ;
+export const ElphinstoneGrave: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="two-column-section">
@@ -15,7 +14,6 @@ function ElphinstoneGrave() {
           What remains today is the original base and cover slab of the tomb Chest. It is made of Black marble which was brought from Tournai in Belgium. This same marble from Tourai can be seen in adjoining grave markers.  The Statue of Bishop Elphinstone and supporting figures were destroyed after the Reformation.
           </p>
         </div>
-
         <div className="column">
         </div>
       </div>
@@ -26,9 +24,3 @@ function ElphinstoneGrave() {
     </div>
   );
 }
-
-
-
-export default ElphinstoneGrave;
-
-
