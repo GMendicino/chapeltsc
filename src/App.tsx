@@ -27,7 +27,7 @@ import { Harrower } from './pages/details/Harrower';
 
 
 
-function App() {
+const App: React.FC = () => {
   return (
       <Router>
         <Routes>

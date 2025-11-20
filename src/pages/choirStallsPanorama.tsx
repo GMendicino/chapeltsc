@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import ReactPannellum from "react-pannellum";
-import "./Panorama.css"; 
+import React, { useEffect, useState, useRef } from 'react';
+import { Pannellum } from "pannellum-react";
+import "../assets/styles/Panorama.css"; 
 import { Link } from "react-router-dom";
-  
-const popupRef = React.createRef();
 
-function Panorama() {
+export const ChoirStallsPanorama: React.FC = () => {
 
-  const [graffitiPopupVisible, setGraffitiPopupVisible] = useState(false);
-  const [choirStallsPopupVisible, setChoirStallsPopupVisible] = useState(false);
-  const [stainedGlassPopupVisible, setStainedGlassPopupVisible] = useState(false);
-  const [anteDirectionPopupVisible, setAnteDirectionPopupVisible] = useState(false);
-  const [deGurbsPopupVisible, setDeGurbsPopupVisible] = useState(false);
-  const [chapelMousePopupVisible, setChapelMousePopupVisible] = useState(false);
-  const [sanctuaryDirectionPopupVisible, setSanctuaryDirectionPopupVisible] = useState(false);
-  const [chairPopupVisible, setChairPopupVisible] = useState(false);
+  const [graffitiPopupVisible, setGraffitiPopupVisible] = useState<boolean>(false);
+  const [choirStallsPopupVisible, setChoirStallsPopupVisible] = useState<boolean>(false);
+  const [stainedGlassPopupVisible, setStainedGlassPopupVisible] = useState<boolean>(false);
+  const [anteDirectionPopupVisible, setAnteDirectionPopupVisible] = useState<boolean>(false);
+  const [deGurbsPopupVisible, setDeGurbsPopupVisible] = useState<boolean>(false);
+  const [chapelMousePopupVisible, setChapelMousePopupVisible] = useState<boolean>(false);
+  const [sanctuaryDirectionPopupVisible, setSanctuaryDirectionPopupVisible] = useState<boolean>(false);
+  const [chairPopupVisible, setChairPopupVisible] = useState<boolean>(false);
+
+  const popupRef = useRef<HTMLDivElement>(null);
 
   //Add text to speech
-  const speakText = (text) => {
-    const synth = window.speechSynthesis;
-    synth.cancel(); // Cancel previous speech, if any
-    const utterance = new SpeechSynthesisUtterance(text);
-    synth.speak(utterance);
+  const speakText = (elementId: string) => {
+    const text = document.getElementById(elementId)?.textContent;
+    if (text) {
+      const synth = window.speechSynthesis;
+      synth.cancel(); // Cancel previous speech, if any
+      const utterance = new SpeechSynthesisUtterance(text);
+      synth.speak(utterance);
+    }
   };
 
   //Stop text to speech
@@ -30,8 +33,8 @@ function Panorama() {
   };
 
     useEffect(() => {
-      const handleClickOutside = (event) => {
-        if (popupRef.current && !popupRef.current.contains(event.target)) {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
           setGraffitiPopupVisible(false);
           setChoirStallsPopupVisible(false);
           setStainedGlassPopupVisible(false);
@@ -50,148 +53,6 @@ function Panorama() {
       };
     }, []);
 
-  useEffect(() => {
-    const addHotspot = () => {
-
-        if (ReactPannellum.getCurrentScene() === "firstScene") {
-          ReactPannellum.addHotSpot(
-            {
-              pitch: 180,
-              yaw: 2,
-              type: "custom",
-              cssClass: "directionHotspot",
-              createTooltipFunc: (hotspotDiv) => {
-                hotspotDiv.style.cursor = "pointer";
-                hotspotDiv.onclick = () => {
-                  setAnteDirectionPopupVisible(true);
-                };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-              pitch: 0,
-              yaw: 90,
-              type: "custom",
-              cssClass: "graffitiHotspot",
-              createTooltipFunc: (hotspotDiv) => {
-                hotspotDiv.style.cursor = "pointer";
-
-                hotspotDiv.onclick = () => {
-                    
-                  setGraffitiPopupVisible(true);
-                };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-              pitch: -10,
-              yaw: 230,
-              type: "custom",
-              cssClass: "graffitiHotspot",
-              createTooltipFunc: (hotspotDiv) => {
-                hotspotDiv.style.cursor = "pointer";
-
-                hotspotDiv.onclick = () => {
-                    
-                  setChairPopupVisible(true);
-                };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-              pitch: -30,
-              yaw: 130,
-              type: "custom",
-              cssClass: "chapelMouseHotspot",
-              createTooltipFunc: (hotspotDiv) => {
-                hotspotDiv.style.cursor = "pointer";
-
-                hotspotDiv.onclick = () => {
-                    
-                  setChapelMousePopupVisible(true);
-                };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-              pitch: -40,
-              yaw: 360,
-              type: "custom",
-              cssClass: "choirStallsHotspot",
-              createTooltipFunc: (hotspotDiv) => {
-                hotspotDiv.style.cursor = "pointer";
-
-                hotspotDiv.onclick = () => {
-                    
-                  setChoirStallsPopupVisible(true);
-                };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-                pitch: 30, 
-                yaw: 310,    
-                scale: 10.0,  
-                type: "custom",
-                cssClass: "windowsHotspot",
-                createTooltipFunc: (hotspotDiv) => {
-                  hotspotDiv.style.cursor = "pointer";
-
-                  // Add click event listener
-                  hotspotDiv.onclick = () => {
-                      setDeGurbsPopupVisible(true);
-                  };
-              },
-            },
-          );
-          ReactPannellum.addHotSpot(
-            {
-                pitch: 30, 
-                yaw: 240,    
-                scale: 10.0,  
-                type: "custom",
-                cssClass: "windowsHotspot",
-                createTooltipFunc: (hotspotDiv) => {
-                  hotspotDiv.style.cursor = "pointer";
-
-                  // Add click event listener
-                  hotspotDiv.onclick = () => {
-                      setStainedGlassPopupVisible(true);
-                  };
-              },
-            },
-          );
-        ReactPannellum.addHotSpot(
-          {
-            pitch: 180,
-            yaw: 182,
-            type: "custom",
-            cssClass: "directionHotspot",
-            createTooltipFunc: (hotspotDiv) => {
-              hotspotDiv.style.cursor = "pointer";
-              hotspotDiv.onclick = () => {
-                setSanctuaryDirectionPopupVisible(true);
-              };
-            },
-          },
-        );
-      }
-    };
-
-    // Wait for the scene to load before adding hotspots
-    setTimeout(addHotspot, 500); // Small delay to ensure Pannellum loads
-    
-    return () => {
-      window.speechSynthesis.cancel(); //Stop text to speech when leaving the page
-    }
-
-    }, []);
-
   const style={
       width: "100%",
       height: "700px",
@@ -201,13 +62,73 @@ function Panorama() {
   const config = {
       autoLoad: true,
       showControls: false,
+      hotSpots: [
+        {
+          pitch: 180,
+          yaw: 2,
+          type: "custom",
+          cssClass: "directionHotspot",
+          handleClick: () => setAnteDirectionPopupVisible(true),
+        },
+        {
+          pitch: 0,
+          yaw: 90,
+          type: "custom",
+          cssClass: "graffitiHotspot",
+          handleClick: () => setGraffitiPopupVisible(true),
+        },
+        {
+          pitch: -10,
+          yaw: 230,
+          type: "custom",
+          cssClass: "graffitiHotspot",
+          handleClick: () => setChairPopupVisible(true),
+        },
+        {
+          pitch: -30,
+          yaw: 130,
+          type: "custom",
+          cssClass: "chapelMouseHotspot",
+          handleClick: () => setChapelMousePopupVisible(true),
+        },
+        {
+          pitch: -40,
+          yaw: 360,
+          type: "custom",
+          cssClass: "choirStallsHotspot",
+          handleClick: () => setChoirStallsPopupVisible(true),
+        },
+        {
+            pitch: 30, 
+            yaw: 310,    
+            scale: 10.0,  
+            type: "custom",
+            cssClass: "windowsHotspot",
+            handleClick: () => setDeGurbsPopupVisible(true),
+        },
+        {
+            pitch: 30, 
+            yaw: 240,    
+            scale: 10.0,  
+            type: "custom",
+            cssClass: "windowsHotspot",
+            handleClick: () => setStainedGlassPopupVisible(true),
+        },
+        {
+          pitch: 180,
+          yaw: 182,
+          type: "custom",
+          cssClass: "directionHotspot",
+          handleClick: () => setSanctuaryDirectionPopupVisible(true),
+        },
+      ]
     };
   
 
 return (
   <div>
 
-    <ReactPannellum
+    <Pannellum
       id="1"
       sceneId="firstScene"
       config={config}
@@ -225,7 +146,7 @@ return (
               </p>
               <div className="popup-buttons">
                 <Link to="/stainedGlass" className="info-button">Learn more</Link>
-                <button onClick={() => speakText(document.getElementById('stainedGlassParagraph').textContent)}>Listen To Audio</button>
+                <button onClick={() => speakText('stainedGlassParagraph')}>Listen To Audio</button>
                 <button onClick={stopSpeech}>Stop Audio</button>
               </div>
               <div className="popup-close-button">
@@ -246,7 +167,7 @@ return (
                   If you explore the choir seats you will notice that students have certainly left their mark. Over the centuries, starting from the early 1600s, students etched their names into the choir stalls. Please don’t just see this as testimony of naughtiness – there is plenty of skill to admire! Scribal work played a large role in their studies, and penmanship was greatly important. This interestingly comes into focus even in their graffiti. On many of the names etched into the seats, you may notice faint tracing lines, acting as guides to ensure that their mark was neat, and carved for eternity.   
                 </p>
                 <div className="popup-buttons">
-                  <button onClick={() => speakText(document.getElementById('graffitiParagraph').textContent)}>Listen To Audio</button>
+                  <button onClick={() => speakText('graffitiParagraph')}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                 </div>
                 <div className="popup-close-button">
@@ -268,7 +189,7 @@ return (
                 </p>
                 <div className="popup-buttons">
                   <Link to="/chapelMouse" className="info-button">Learn more</Link>
-                  <button onClick={() => speakText(document.getElementById('mouseParagraph').textContent)}>Listen To Audio</button>
+                  <button onClick={() => speakText('mouseParagraph')}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                 </div>
                 <div className="popup-close-button">
@@ -290,7 +211,7 @@ return (
                 </p>
                 <div className="popup-buttons">
                   <Link to="/deGurbs" className="info-button">Learn more</Link>
-                  <button onClick={() => speakText(document.getElementById('deGurbsParagraph').textContent)}>Listen To Audio</button>
+                  <button onClick={() => speakText('deGurbsParagraph')}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                 </div>
                 <div className="popup-close-button">
@@ -314,7 +235,7 @@ return (
                 </p>
                 <div className="popup-buttons">
                   <Link to="/choirStalls" className="info-button">Learn more</Link>
-                  <button onClick={() => speakText(document.getElementById('choirStallParagraph').textContent)}>Listen To Audio</button>
+                  <button onClick={() => speakText('choirStallParagraph')}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                   </div>
                   <div className="popup-close-button">
@@ -335,7 +256,7 @@ return (
                 These seats were designed to tip upward and act as a prop for choir members during long periods of standing. A select few of the remaining originals have designs on the under sides. Many designs resemble the drawings found in the founder, Bishop Elphinstone’s handwritten books from the early 1500s and which are held today in the University archives
                 </p>
                 <div className="popup-buttons">
-                  <button onClick={() => speakText(document.getElementById('chairParagraph').textContent)}>Listen To Audio</button>
+                  <button onClick={() => speakText('chairParagraph')}>Listen To Audio</button>
                   <button onClick={stopSpeech}>Stop Audio</button>
                   </div>
                   <div className="popup-close-button">
@@ -376,5 +297,3 @@ return (
   </div>
 );
 }
-
-export default Panorama;

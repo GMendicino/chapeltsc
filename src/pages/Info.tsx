@@ -1,4 +1,4 @@
-import React, { useState, useEffect, CSSProperties } from 'react';
+import React, { useState, useEffect, CSSProperties, useMemo } from 'react';
 import { Carousel } from '../components/Carousel';
 import "../assets/styles/info.css";
 import { Footer } from '../components/Footer';
@@ -11,19 +11,19 @@ interface Service {
 }
 
 export const Info: React.FC = () => {
-  const mobileImages: string[] = [
+  const mobileImages: string[] = useMemo(() => [
     "/images/chapel1M.png",
     "/images/chapel2M.png",
     "/images/chapel3M.png",
-  ];
+  ], []);
   
-  const desktopImages: string[] = [
+  const desktopImages: string[] = useMemo(() => [
     "/images/Desktop1.png",
     "/images/Desktop2.png",
     "/images/Desktop3.png",
     "/images/Desktop4.png",
     "/images/Desktop5.png",
-  ];
+  ], []);
   
   const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth > 768);
   const [images, setImages] = useState<string[]>(isDesktop ? desktopImages : mobileImages);
@@ -91,7 +91,7 @@ export const Info: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []); 
+  }, [desktopImages, mobileImages]); 
 
   const infoContainerStyle: CSSProperties = {
      minHeight: '150vh'

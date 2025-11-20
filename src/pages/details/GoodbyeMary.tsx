@@ -15,7 +15,7 @@ export const GoodbyeMary: React.FC = () => {
           </p>
         </div>
         <div className="column">
-          <img src="/images/maryImage.jpg" alt="Mary Image" width="300" height="400" className="image" />
+          <img src="/images/maryImage.jpg" alt="Mary" width="300" height="400" className="image" />
         </div>
       </div>
       <button className="backButton" onClick={() => navigate(-1)}>
