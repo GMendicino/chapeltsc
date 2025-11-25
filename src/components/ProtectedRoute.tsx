@@ -7,7 +7,7 @@ interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({children}) => {
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const location = useLocation();
@@ -16,31 +16,30 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({children}) => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log("ProtectedRoute Listener: User is signed IN", user.uid);
-        setIsAuthenticated(true); 
-      } else {  
+        setIsAuthenticated(true);
+      } else {
         console.log("ProtectedRoute Listener: User is signed OUT");
         setIsAuthenticated(false);
       }
     });
 
     return () => {
-        console.log("ProtectedRoute: Cleaning up auth listener.");
-        unsubscribe();
+      console.log("ProtectedRoute: Cleaning up auth listener.");
+      unsubscribe();
     }
   }, []);
 
-  const Loading: React.FC = () => {
+  if (isAuthenticated === null) {
     return <div>Loading...</div>;
-  };
-
+  }
 
   if (!isAuthenticated) {
     console.log("ProtectedRoute: User not authenticated, redirecting to /login");
-    return React.createElement(Navigate, { to: "/login", state: { from: location }, replace: true });
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   console.log("ProtectedRoute: User authenticated, rendering children.");
-  return children;
-}; 
+  return <>{children}</>;
+};
 
 export default ProtectedRoute;
