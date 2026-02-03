@@ -43,12 +43,7 @@ useEffect(() => {
             </div>
 
             <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
-
-                <li><Link to="/panorama" onClick={closeMenu}>Ante-Chapel</Link></li>
-                <li><Link to="/choirStallsPanorama" onClick={closeMenu}>Choir Stalls</Link></li>
-                <li><Link to="/sanctuaryPanorama" onClick={closeMenu}>Sanctuary</Link></li>
                 <li><Link to="/help" onClick = {closeMenu}>Help</Link></li>
-
             </ul>
             
         </nav>

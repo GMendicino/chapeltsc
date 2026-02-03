@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Layout } from './components/Layout'; 
 
+import { Main } from "./pages/Main";
 import { Info } from './pages/Info'; 
 import { HelpPage } from './pages/help'; 
 
@@ -31,8 +32,8 @@ const App: React.FC = () => {
   return (
       <Router>
         <Routes>
-            
-          <Route path="/" element={<Layout><Info /></Layout>} />
+          <Route path="/" element={<Layout><Main /></Layout>} />
+          <Route path="/tour" element={<Layout><Info /></Layout>} />
           <Route path="/panorama" element={ <Layout><Panorama /></Layout> } />
           <Route path="/choirStallsPanorama" element={ <Layout><ChoirStallsPanorama /></Layout> } />
           <Route path="/sanctuaryPanorama" element={ <Layout><SanctuaryPanorama /></Layout> } />
