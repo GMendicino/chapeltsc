@@ -37,10 +37,13 @@ export const Info: React.FC = () => {
     );
   }
   
+  /*
+  THIS IS WHERE ADMIN INPUT CAN BE "PIPED" INTO
+  */
   const services: Service[] = [
     {
       title: "Altar",
-      content: "The altar is a sacred table used for worship or sacrifice, typically serving as the focal point during religious rites such as the Eucharist.",
+      content: "The altar is a  sacred table used for worship or sacrifice, typically serving as the focal point during religious rites such as the Eucharist.",
       icon: "/images/alter.jpg" 
     },
     {
@@ -101,7 +104,10 @@ export const Info: React.FC = () => {
     opacity: carouselOpacity,
     transition: 'opacity 0.2s ease-out'
   };
-
+  
+  /*
+  THIS IS WHERE ADMIN INPUT CAN BE "PIPED" INTO
+  */
   return (
     <div className="info-container" style={infoContainerStyle}>
       <div
@@ -119,9 +125,6 @@ export const Info: React.FC = () => {
           <p>
           'Good day to you' or as we say in Doric: 'Fit Like'. Welcome to the King's Chapel one of the oldest surviving buildings on our Aberdeen Campus founded in 1495 and began construction in 1500. We are happy to have you today and hope that you will enjoy exploring with our app. As you move around the chapel use your phone to look for areas highlighted by unique links to find out more.
           </p>
-        </div>
-        <div className="column">
-          {/* Empty column */}
         </div>
       </div>  
        <div className="services-container">

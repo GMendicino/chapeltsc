@@ -12,11 +12,6 @@ To enable effective links between pages, we needed to install React Router which
 To enable the view and navigation of panoramic images, we needed to install React Pannellum. To install this, simply
 put npm install react-pannellum into the command line.
 
-# Install Firebase Functions
-
-To enable communication with our Firebase database simple type npm install firebase into the terminal.
-
-
 # Getting Started with Create React App (Supplied by React)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -58,21 +53,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-# The Purpose of our Application
-
-Our application was made to solve a big issue, the lack of tourists arriving to the Aberdeen University Chapel.
 
 # Testing Our Application
 
 Testing our application is simple, as it says above, through using npm start, the application is run within local host.
 This can be used to see all of our features the same way it would be if its were hosted.
-
-# Deployment
-
-To deploy our application, we used a hosting website called Render in which we could link our shared repository
-to host our application without having to worry about pipelines.
-
-# Entending Our System
-
-In future, if someone were to want to extend our system, we would add them to the shared repository in which they
-could continue to build on top of the application and add useful features and quality of life updates.
