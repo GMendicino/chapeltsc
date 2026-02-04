@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles/footer.css'; 
+import pointerlogo from '../assets/images/pointerlogo.png';
+import UK from '../assets/images/UK.png';
+import UoA from '../assets/images/UoA.svg';
 
 export const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -29,7 +32,7 @@ export const Footer: React.FC = () => {
   return (
     <div className="Footer">
       <div className="footer-container">
-        <img src="/images/UoA.svg" alt="University of Aberdeen" className="footer-logo" />
+        <img src={UoA} alt="University of Aberdeen" className="footer-logo" />
 
         <div className="footer-content-container">
           <div className="footer-text-container">
@@ -45,8 +48,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <img src="/images/UK.png" alt="UK Flag" className="footer-uk-image" />
-          <img src="/images/pointer.png" alt="Pointer" className="footer-pointer-image" />
+          <img src={UK} alt="UK Flag" className="footer-uk-image" />
+          <img src={pointerlogo} alt="Pointer" className="footer-pointer-image" />
         </div>
       </div>
 

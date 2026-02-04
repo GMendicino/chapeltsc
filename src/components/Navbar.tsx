@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import UoAlogo from "../assets/images/UoAlogo.png";
 
 export const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ useEffect(() => {
         <nav className="navbar">
             <div className="navbar-logo">
                 <Link to="/" onClick={closeMenu}>
-                    <img src="/images/logo2.png" alt="University of Aberdeen" />
+                    <img src={UoAlogo} alt="University of Aberdeen" />
                 </Link>
             </div>
 
