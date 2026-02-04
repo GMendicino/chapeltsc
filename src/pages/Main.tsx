@@ -10,8 +10,6 @@ interface Tour {
   link: string;
 }
 
-
-
 export const Main: React.FC = () => {
   const tours: Tour[] = [
     {
@@ -33,48 +31,51 @@ export const Main: React.FC = () => {
 
 return (
   <div className="info-container">
-    {/* Welcome */}
-    <div className="two-column-section">
+    {/* Map + Welcome side-by-side */}
+    <div className="two-column-section" style={{ alignItems: "center" }}>
+      {/* Welcome text column */}
       <div className="column">
         <h2>Welcome</h2>
-        <p>
-          This application was built by University students to provide interactive virtual tours of historic university
-          buildings.
+        <p style={{ maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>
+          This application was built by University students to provide interactive virtual tours of 
+          historic university buildings, making it easier to explore spaces that are not always 
+          accessible in person. Each tour combines panoramic imagery with interactive features so you 
+          can move through key locations and learn about the buildings as you go.
+        </p>
+        <p style={{ maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>         
+          The University of Aberdeen has many fascinating and historic buildings, each with its 
+          own character and purpose, ranging from ceremonial and religious spaces to academic and
+          civic architecture. Select a tour below or use the map to explore.
         </p>
       </div>
-    </div>
 
-    {/* Centered map (image) */}
-    <div style={{ display: "flex", justifyContent: "center", margin: "24px 0 48px" }}>
-      <div
-        style={{
-          width: "min(1200px, 95%)",
-          height: "320px",
-          overflow: "hidden",
-          borderRadius: "9999px",
-        }}
-      >
-        <img
-          src={MapExample}
-          alt="Interactive map placeholder"
+      {/* Map column */}
+      <div className="column">
+        <div
           style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
+            width: "500px",
+            height: "500px",
+            overflow: "hidden",
+            borderRadius: "70px",
           }}
-        />
+        >
+          <img
+            src={MapExample}
+            alt="Interactive map placeholder"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        </div>
       </div>
     </div>
 
-    {/* Tour selection (below text) */}
-      <div style={{ textAlign: "center", margin: "0 0 24px" }}>
-        <p style={{ margin: 0, maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>
-          There are many fascinating and historic buildings within the University of Aberdeen. 
-          Select a tour below or use the map to explore.
-        </p>
-      </div>   
+    {/* Tour selection (below text) */}  
     <div className="services-container" style={{ justifyContent: "center", flexWrap: "wrap" }}>
+      <h1 style={{ width: "100%", textAlign: "center", marginBottom: "24px" }}>Select a tour</h1>
       {tours.map((tour, i) => (
         <Link key={i} to={tour.link} className="service-item">
           <img src={tour.image} alt={tour.title} className="service-icon" />
