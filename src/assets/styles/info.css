@@ -33,6 +33,7 @@ body {
   padding: 20px;
   background-color: #efeeec;
   padding-bottom: 0%;
+  flex: 1 0 auto;
 }
 
 .service-item {
@@ -183,4 +184,10 @@ body {
     .navbar-search {
         display: none; 
     }
+}
+
+.info-container{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

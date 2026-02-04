@@ -31,8 +31,8 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="Footer">
-      <div className="footer-container">
-        <img src={UoA} alt="University of Aberdeen" className="footer-logo" />
+
+                <img src={UoA} alt="University of Aberdeen" className="footer-logo" />
 
         <div className="footer-content-container">
           <div className="footer-text-container">
@@ -48,9 +48,10 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
+          <div className="footer-map">
           <img src={UK} alt="UK Flag" className="footer-uk-image" />
           <img src={pointerlogo} alt="Pointer" className="footer-pointer-image" />
-        </div>
+          </div>
       </div>
 
       {isVisible && (
