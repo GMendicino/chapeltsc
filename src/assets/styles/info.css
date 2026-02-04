@@ -116,20 +116,8 @@ body {
   background-color: #1C4392 !important;
 }
 
-.navbar {
-  display: fixed;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #fff, #fff);
-  border-radius: 10px;
-  max-width: 100%; 
-  box-sizing: border-box; 
-  position: relative ;
-}
-
 .Start-Tour{
   text-align: center;
-  margin: 20px ;
 }
 
 .Start-Tour-Button {
