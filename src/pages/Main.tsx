@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/info.css";
+import "../styles/info.css";
 import { Footer } from "../components/Footer";
 import { Carousel } from "../components/Carousel";
 
@@ -19,8 +19,11 @@ export const Main: React.FC = () => {
 
   //Images used for slideshow
   const slideshowImages = [
-  "/images/carousel.jpg",
-  "/images/carousel2.jpg",
+  "/images/mainslideshow1.png",
+  "/images/mainslideshow2.png",
+  "/images/mainslideshow3.png",
+  "/images/mainslideshow4.png",
+  "/images/mainslideshow5.png"
   ];
 
   return (

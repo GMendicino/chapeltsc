@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/help.css';
+import '../styles/help.css';
 import { Footer } from '../components/Footer';
 
 export const HelpPage : React.FC = () => {

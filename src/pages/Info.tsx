@@ -1,6 +1,6 @@
 import React, { useState, useEffect, CSSProperties, useMemo } from 'react';
 import { Carousel } from '../components/Carousel';
-import "../assets/styles/info.css";
+import "../styles/info.css";
 import { Footer } from '../components/Footer';
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ interface Service {
 
 export const Info: React.FC = () => {
   const tourSlideshowImages = [
-  "/images/carousel.jpg",
+  "/images/carousel1.jpg",
   "/images/carousel2.jpg",
   ];
 
