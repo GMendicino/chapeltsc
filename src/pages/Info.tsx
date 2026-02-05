@@ -72,9 +72,9 @@ export const Info: React.FC = () => {
       </div>
       <div className="two-column-section">
         <div className="column">
-          <h2>Welcome!</h2>
+          <h2>The King's College Chapel</h2>
           <p>
-          'Good day to you' or as we say in Doric: 'Fit Like'. Welcome to the King's Chapel one of the oldest surviving buildings on our Aberdeen Campus founded in 1495 and began construction in 1500. We are happy to have you today and hope that you will enjoy exploring with our app. As you move around the chapel use your phone to look for areas highlighted by unique links to find out more.
+            Welcome to the King's Chapel, one of the oldest surviving buildings on our Aberdeen Campus founded in 1495 and began construction in 1500. We are happy to have you today and hope that you will enjoy exploring with our app. As you move around the chapel use your phone to look for areas highlighted by unique links to find out more.
           </p>
         </div>
       </div>  

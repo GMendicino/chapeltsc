@@ -34,13 +34,13 @@ export const Main: React.FC = () => {
       <div className="two-column-section" style={{ alignItems: "center" }}>
         <div className="column">
           <h2>Welcome!</h2>
-          <p style={{ maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ maxWidth: "500px", marginLeft: "auto", marginRight: "auto" }}>
             This application was built by University students to provide interactive virtual tours of
             historic university buildings, making it easier to explore spaces that are not always
             accessible in person. Each tour combines panoramic imagery with interactive features so you
             can move through key locations and learn about the buildings as you go.
           </p>
-          <p style={{ maxWidth: "700px", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ maxWidth: "500px", marginLeft: "auto", marginRight: "auto" }}>
             The University of Aberdeen has many fascinating and historic buildings, each with its own
             character and purpose, ranging from ceremonial and religious spaces to academic and civic
             architecture. Select a tour below or use the map to explore.

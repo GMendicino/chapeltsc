@@ -31,7 +31,10 @@ useEffect(() => {
         <nav className="navbar">
             <div className="navbar-logo">
                 <Link to="/" onClick={closeMenu}>
-                    <img src={"/images/UoAlogo.png"} alt="University of Aberdeen" />
+                    <img
+                        src={"/images/UoAlogo.png"} alt="University of Aberdeen"
+                        style={{ borderRadius: "20px"}}
+                    />
                 </Link>
             </div>
 
