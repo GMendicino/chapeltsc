@@ -4,9 +4,10 @@ import "../assets/styles/carousel.css";
 interface CarouselProps {
   images: string[];
   interval?: number;
+  style?: React.CSSProperties;
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) => {
+export const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000, style }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000 }) =
   };
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container" style={style}>
       <button onClick={goToPrevious} className="nav-button left">
         &#10094;
       </button>

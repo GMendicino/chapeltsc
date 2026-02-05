@@ -97,25 +97,16 @@ export const Info: React.FC = () => {
   }, [desktopImages, mobileImages]); 
 
   const infoContainerStyle: CSSProperties = {
-     minHeight: '150vh'
+     minHeight: '150vh',
+     position: 'relative'
   };
 
-  const carouselContainerStyle: CSSProperties = {
-    opacity: carouselOpacity,
-    transition: 'opacity 0.2s ease-out'
-  };
-  
   /*
   THIS IS WHERE ADMIN INPUT CAN BE "PIPED" INTO
   */
   return (
     <div className="info-container" style={infoContainerStyle}>
-      <div
-        className="carousel-container"
-        style={carouselContainerStyle}
-      >
-        <Carousel images={images} interval={3200} />
-      </div>
+        <Carousel images={images} interval={3200} style={{opacity: carouselOpacity, transition: 'opacity 0.2s ease-out'}} />
       <div className="Start-Tour">
         <StartTour/>
       </div>
