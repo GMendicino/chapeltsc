@@ -117,7 +117,8 @@ body {
   background-color: #1C4392 !important;
 }
 
-.navbar {
+/* Redundant? */
+/* .navbar {
   display: fixed;
   justify-content: space-between;
   align-items: center;
@@ -126,7 +127,7 @@ body {
   max-width: 100%; 
   box-sizing: border-box; 
   position: relative ;
-}
+} */
 
 .Start-Tour{
   text-align: center;

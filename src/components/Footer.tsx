@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
   return (
     <div className="Footer">
 
-                <img src={UoA} alt="University of Aberdeen" className="footer-logo" />
+        <img src={UoA} alt="University of Aberdeen" className="footer-logo" />
 
         <div className="footer-content-container">
           <div className="footer-text-container">
