@@ -31,27 +31,27 @@ export const Info: React.FC = () => {
     {
       title: "Altar",
       content: "The altar is a  sacred table used for worship or sacrifice, typically serving as the focal point during religious rites such as the Eucharist.",
-      icon: "/images/alter.jpg" 
+      icon: "/images/temporaryIcon.png" 
     },
     {
       title: "Cross",
       content: "The cross stands as a central symbol of Christianity, representing the sacrificial death and resurrection of Jesus Christ.",
-      icon: "/images/cross.jpg"
+      icon: "/images/temporaryIcon.png"
     },
     {
       title: "Chapel",
       content: "A chapel is a smaller place of worship intended for private prayer, reflection, or more intimate religious gatherings.",
-      icon: "/images/chapel_icon.jpg"
+      icon: "/images/temporaryIcon.png"
     },
     {
       title: "Bible",
       content: "The Bible is the holy scripture of Christianity, encompassing sacred texts that guide believers in faith, doctrine, and morality.",
-      icon: "/images/bible.jpg"
+      icon: "/images/temporaryIcon.png"
     },
     {
       title: "Chalice", 
       content: "The chalice is a consecrated cup used in Christian liturgy to hold wine, symbolizing the blood of Christ.",
-      icon: "/images/challace.jpg"
+      icon: "/images/temporaryIcon.png"
     }
   ];
 

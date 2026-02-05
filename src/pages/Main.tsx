@@ -12,9 +12,9 @@ interface Tour {
 
 export const Main: React.FC = () => {
   const tours: Tour[] = [
-    { title: "Chapel", image: "/images/chapel_icon.jpg", link: "/tour" },
-    { title: "Example Tour", image: "/images/cross.jpg", link: "/tour" },
-    { title: "Example Tour 2", image: "/images/bible.jpg", link: "/tour" },
+    { title: "Chapel", image: "/images/temporaryIcon.png", link: "/tour" },
+    { title: "Example Tour", image: "/images/temporaryIcon.png", link: "/tour" },
+    { title: "Example Tour 2", image: "/images/temporaryIcon.png", link: "/tour" },
   ];
 
   //Images used for slideshow
