@@ -6,9 +6,7 @@ import { Main } from "./pages/Main";
 import { Info } from './pages/Info'; 
 import { HelpPage } from './pages/help'; 
 
-import { Panorama } from './pages/Panorama'; 
-import { ChoirStallsPanorama } from './pages/choirStallsPanorama'; 
-import { SanctuaryPanorama } from './pages/sanctuaryPanorama'; 
+import { Panorama } from './pages/TempPanorama'; 
 
 import { SmallPulpit } from './pages/details/SmallPulpit';
 import { RoodScreen } from './pages/details/RoodScreen'; 
@@ -35,8 +33,6 @@ const App: React.FC = () => {
           <Route path="/" element={<Layout><Main /></Layout>} />
           <Route path="/tour" element={<Layout><Info /></Layout>} />
           <Route path="/panorama" element={ <Layout><Panorama /></Layout> } />
-          <Route path="/choirStallsPanorama" element={ <Layout><ChoirStallsPanorama /></Layout> } />
-          <Route path="/sanctuaryPanorama" element={ <Layout><SanctuaryPanorama /></Layout> } />
           <Route path="/help" element={ <Layout><HelpPage /></Layout> } />
 
           <Route path="/harrower" element={ <Layout><Harrower /></Layout> } />

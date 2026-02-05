@@ -1,8 +1,6 @@
 import React from 'react';
 import '../assets/styles/help.css';
 import { Footer } from '../components/Footer';
-import tutorial1 from '../assets/images/tutorial1.png'
-
 
 export const HelpPage : React.FC = () => {
   return (
@@ -19,7 +17,7 @@ export const HelpPage : React.FC = () => {
           </p>
 
           <section className="tour-image-section">
-            <img src={tutorial1} alt="Panoramic tour walkthrough" className="tour-image" />
+            <img src={"/images/tutorial.png"} alt="Panoramic tour walkthrough" className="tour-image" />
             <p className="image-caption">
               Step inside the app with our panoramic tutorial view – scroll, click, and interact to explore.
             </p>

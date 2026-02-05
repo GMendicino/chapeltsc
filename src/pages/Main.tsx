@@ -2,10 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/info.css";
 import { Footer } from "../components/Footer";
-import MapExample from "../assets/images/MapExample.png";
 import { Carousel } from "../components/Carousel";
-import carousel from "../assets/images/carousel.jpg";
-import carousel2 from "../assets/images/carousel2.jpg";
 
 interface Tour {
   title: string;
@@ -22,9 +19,8 @@ export const Main: React.FC = () => {
 
   //Images used for slideshow
   const slideshowImages = [
-  carousel,
-  carousel2,
-  //"/images/Desktop3.png",
+  "/images/carousel.jpg",
+  "/images/carousel2.jpg",
   ];
 
   return (
@@ -61,7 +57,7 @@ export const Main: React.FC = () => {
             }}
           >
             <img
-              src={MapExample}
+              src={"/images/MapExample.png"}
               alt="Interactive map placeholder"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />

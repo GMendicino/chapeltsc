@@ -11,23 +11,10 @@ interface Service {
 }
 
 export const Info: React.FC = () => {
-  const mobileImages: string[] = useMemo(() => [
-    "/images/chapel1M.png",
-    "/images/chapel2M.png",
-    "/images/chapel3M.png",
-  ], []);
-  
-  const desktopImages: string[] = useMemo(() => [
-    "/images/Desktop1.png",
-    "/images/Desktop2.png",
-    "/images/Desktop3.png",
-    "/images/Desktop4.png",
-    "/images/Desktop5.png",
-  ], []);
-  
-  const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth > 768);
-  const [images, setImages] = useState<string[]>(isDesktop ? desktopImages : mobileImages);
-  const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
+  const tourSlideshowImages = [
+  "/images/carousel.jpg",
+  "/images/carousel2.jpg",
+  ];
 
   const StartTour: React.FC = () => {
     return (
@@ -68,33 +55,7 @@ export const Info: React.FC = () => {
     }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const maxScroll = 800;
-      const scrolled = window.scrollY;
-      let newOpacity = 1 - scrolled / maxScroll;
-      if (newOpacity < 0.2) {
-        newOpacity = 0.2;
-      }
-      setCarouselOpacity(newOpacity);
-    };
 
-    const handleResize = () => {
-      const desktop = window.innerWidth > 768;
-      setIsDesktop(desktop);
-      setImages(desktop ? desktopImages : mobileImages);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    
-    handleResize(); 
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [desktopImages, mobileImages]); 
 
   const infoContainerStyle: CSSProperties = {
      minHeight: '150vh',
@@ -106,8 +67,7 @@ export const Info: React.FC = () => {
   */
   return (
     <div className="info-container" style={infoContainerStyle}>
-        <Carousel images={images} interval={3200} style={{opacity: carouselOpacity, transition: 'opacity 0.2s ease-out'}} />
-      <div className="Start-Tour">
+        <Carousel images={tourSlideshowImages} interval={5000} />      <div className="Start-Tour">
         <StartTour/>
       </div>
       <div className="two-column-section">
