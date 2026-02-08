@@ -37,9 +37,16 @@ body {
 }
 
 .service-item {
-  max-width: 300px;    
+  max-width: 300px; 
+  min-width: 180px;   
   text-align: center;
-  color: #000;         
+  color: #000;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 300px;
+
 }
 
 .service-icon {
@@ -51,20 +58,25 @@ body {
   object-fit: cover;      
 }
 
-.two-column-section {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 2rem;       
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 80%;
+ .two-column-section {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   width: 80%;
   margin: 0 auto;
-}
+ }
 
-.two-column-section .column {
-  flex: 1 1 0;
+
+.column {
+  flex: 1 2 0;
   min-width: 200px;
   text-align: center; 
+}
+
+.column2 {
+  flex: 1 2 0;
+  height: auto;
+  min-width: auto;
 }
 
 .two-column-section h2 {
@@ -117,15 +129,6 @@ body {
   background-color: #1C4392 !important;
 }
 
-/* .navbar {
-  display: fixed;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  max-width: 100%; 
-  box-sizing: border-box; 
-  position: relative ;
-} */
 
 .Start-Tour{
   text-align: center;
@@ -188,4 +191,27 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Help button: readable on top of slideshow/map */
+.navbar-help {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.navbar-help:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-help:focus-visible {
+  outline: 2px solid rgba(28, 67, 146, 0.6);
+  outline-offset: 2px;
 }

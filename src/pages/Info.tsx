@@ -12,8 +12,9 @@ interface Service {
 
 export const Info: React.FC = () => {
   const tourSlideshowImages = [
-  "/images/carousel1.jpg",
-  "/images/carousel2.jpg",
+  "/images/tourslideshow1.png",
+  "/images/tourslideshow2.png",
+  "/images/tourslideshow3.png"
   ];
 
   const StartTour: React.FC = () => {
@@ -29,28 +30,28 @@ export const Info: React.FC = () => {
   */
   const services: Service[] = [
     {
-      title: "Altar",
-      content: "The altar is a  sacred table used for worship or sacrifice, typically serving as the focal point during religious rites such as the Eucharist.",
+      title: "EXAMPLE1",
+      content: "PLACEHOLDER TEXT FOR SOMETHING INTERESTING THE ADMIN WOULD LIKE TO HIGHLIGHT ABOUT THE TOUR",
       icon: "/images/temporaryIcon.png" 
     },
     {
-      title: "Cross",
-      content: "The cross stands as a central symbol of Christianity, representing the sacrificial death and resurrection of Jesus Christ.",
+      title: "EXAMPLE2",
+      content: "PLACEHOLDER TEXT FOR SOMETHING INTERESTING THE ADMIN WOULD LIKE TO HIGHLIGHT ABOUT THE TOUR",
       icon: "/images/temporaryIcon.png"
     },
     {
-      title: "Chapel",
-      content: "A chapel is a smaller place of worship intended for private prayer, reflection, or more intimate religious gatherings.",
+      title: "EXAMPLE3",
+      content: "PLACEHOLDER TEXT FOR SOMETHING INTERESTING THE ADMIN WOULD LIKE TO HIGHLIGHT ABOUT THE TOUR",
       icon: "/images/temporaryIcon.png"
     },
     {
-      title: "Bible",
-      content: "The Bible is the holy scripture of Christianity, encompassing sacred texts that guide believers in faith, doctrine, and morality.",
+      title: "EXAMPLE4",
+      content: "PLACEHOLDER TEXT FOR SOMETHING INTERESTING THE ADMIN WOULD LIKE TO HIGHLIGHT ABOUT THE TOUR",
       icon: "/images/temporaryIcon.png"
     },
     {
-      title: "Chalice", 
-      content: "The chalice is a consecrated cup used in Christian liturgy to hold wine, symbolizing the blood of Christ.",
+      title: "EXAMPLE5", 
+      content: "PLACEHOLDER TEXT FOR SOMETHING INTERESTING THE ADMIN WOULD LIKE TO HIGHLIGHT ABOUT THE TOUR",
       icon: "/images/temporaryIcon.png"
     }
   ];
@@ -58,8 +59,7 @@ export const Info: React.FC = () => {
 
 
   const infoContainerStyle: CSSProperties = {
-     minHeight: '150vh',
-     position: 'relative'
+    position: 'relative'
   };
 
   /*

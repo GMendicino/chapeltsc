@@ -51,13 +51,9 @@ export const HelpPage : React.FC = () => {
             </p>
           </section>
         </main>
-        <div className="footer">
-
-          <Footer />
-        </div>
       </div>
+      <Footer />
     </div >
-
   );
 };
 

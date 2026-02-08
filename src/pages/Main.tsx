@@ -34,7 +34,7 @@ export const Main: React.FC = () => {
       </div>
 
       {/* Map + Welcome side-by-side */}
-      <div className="two-column-section" style={{ alignItems: "center" }}>
+      <div className="two-column-section" style={{ alignItems: "center"}}>
         <div className="column">
           <h2>Welcome!</h2>
           <p style={{ maxWidth: "500px", marginLeft: "auto", marginRight: "auto" }}>
@@ -48,21 +48,26 @@ export const Main: React.FC = () => {
             character and purpose, ranging from ceremonial and religious spaces to academic and civic
             architecture. Select a tour below or use the map to explore.
           </p>
+          <p style={{ maxWidth: "500px", marginLeft: "auto", marginRight: "auto" }}>
+          Please select a tour below to get started, or use the map to explore the campus. 
+          We hope you enjoy discovering the rich history and architecture of our university
+          through this interactive experience!
+          </p>
         </div>
 
-        <div className="column">
+        <div className="column2">
           <div
             style={{
-              width: "500px",
-              height: "500px",
-              overflow: "hidden",
-              borderRadius: "70px",
+              width: "auto",
+              height: "auto",
+              overflow: "auto",
+              borderRadius: "30px",
             }}
           >
             <img
               src={"/images/MapExample.png"}
               alt="Interactive map placeholder"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              style={{maxWidth: "100%", height: "100%", objectFit: "cover"}}
             />
           </div>
         </div>

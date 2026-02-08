@@ -57,7 +57,8 @@
 .footer-back-to-top-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #8A2F2F;
   color: white;
   border: none;

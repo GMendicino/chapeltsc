@@ -33,7 +33,7 @@ useEffect(() => {
                 <Link to="/" onClick={closeMenu}>
                     <img
                         src={"/images/UoAlogo.png"} alt="University of Aberdeen"
-                        style={{ borderRadius: "20px"}}
+                        style={{ borderRadius: "10px"}}
                     />
                 </Link>
             </div>
@@ -46,7 +46,7 @@ useEffect(() => {
             </div>
 
             <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
-                <li><Link to="/help" onClick = {closeMenu}>Help</Link></li>
+                <li><Link to="/help" className="navbar-help" onClick = {closeMenu}>Help</Link></li>
             </ul>
             
         </nav>
